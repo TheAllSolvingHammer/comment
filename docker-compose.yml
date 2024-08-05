@@ -1,14 +1,24 @@
+version: '3.8'
+
 services:
-  postgres:
-    image: 'postgres:latest'
+  comment_database:
+    image: postgres:13
+    container_name: comment_container
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=adminadmin'
-      - 'POSTGRES_USER=admin'
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminadmin
+      POSTGRES_DB: comment_db
     ports:
-      - '5432:5432'
+      - "5433:5432" # Expose a different port if necessary
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - comment-db-data:/var/lib/postgresql/data
+
+  comment_service:
+    build: ./comment-service
+    environment:
+      DATABASE_URL: postgres://comment_user:comment_password@comment_database:5432/comment_db
+    depends_on:
+      - comment_database
 
 volumes:
-  postgres_data:
+  comment-db-data:
