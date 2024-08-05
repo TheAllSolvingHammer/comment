@@ -1,6 +1,15 @@
 package com.tinqinacademy.comment.core;
 
-import com.tinqinacademy.comment.api.model.user.*;
+import com.tinqinacademy.comment.api.model.user.get.GetCommentsInput;
+import com.tinqinacademy.comment.api.model.user.get.GetCommentsOutput;
+import com.tinqinacademy.comment.api.model.user.leave.LeaveCommentInput;
+import com.tinqinacademy.comment.api.model.user.leave.LeaveCommentOutput;
+import com.tinqinacademy.comment.api.model.user.update.UpdateCommentInput;
+import com.tinqinacademy.comment.api.model.user.update.UpdateCommentOutput;
+import com.tinqinacademy.comment.persistence.entities.CommentEntity;
+import com.tinqinacademy.comment.persistence.repositories.CommentRepository;
+import com.tinqinacademy.comment.persistence.repositories.UserRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +17,11 @@ import java.time.LocalDate;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class CommentUserServiceImpl implements CommentUserService {
+    private final CommentRepository commentRepository;
+    private final UserRepository userRepository;
+
     @Override
     public GetCommentsOutput getComments(GetCommentsInput input) {
         log.info("Start getComments {}",input);
@@ -28,11 +41,15 @@ public class CommentUserServiceImpl implements CommentUserService {
     @Override
     public LeaveCommentOutput leaveComment(LeaveCommentInput input) {
         log.info("Start leaveComment {}",input);
+    //todo
+        userRepository.getReferenceById(input.getUserID());
+        CommentEntity comment= CommentEntity.builder().build();
         LeaveCommentOutput leaveCommentOutput = LeaveCommentOutput.builder()
                 .id("323KF")
                 .build();
         log.info("End leaveComment {}",leaveCommentOutput);
         return leaveCommentOutput;
+
     }
 
     @Override

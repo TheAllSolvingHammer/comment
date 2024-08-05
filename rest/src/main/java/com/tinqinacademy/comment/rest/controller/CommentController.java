@@ -1,7 +1,12 @@
 package com.tinqinacademy.comment.rest.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tinqinacademy.comment.api.model.user.*;
+import com.tinqinacademy.comment.api.model.user.get.GetCommentsInput;
+import com.tinqinacademy.comment.api.model.user.get.GetCommentsOutput;
+import com.tinqinacademy.comment.api.model.user.leave.LeaveCommentInput;
+import com.tinqinacademy.comment.api.model.user.leave.LeaveCommentOutput;
+import com.tinqinacademy.comment.api.model.user.update.UpdateCommentInput;
+import com.tinqinacademy.comment.api.model.user.update.UpdateCommentOutput;
 import com.tinqinacademy.comment.core.CommentUserService;
 import com.tinqinacademy.comment.rest.enums.Mappings;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
