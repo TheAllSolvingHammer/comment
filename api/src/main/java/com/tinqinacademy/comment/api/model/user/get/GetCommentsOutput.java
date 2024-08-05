@@ -1,5 +1,6 @@
-package com.tinqinacademy.comment.api.model.user;
+package com.tinqinacademy.comment.api.model.user.get;
 
+import com.tinqinacademy.comment.api.base.OperationOutput;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -11,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor()
 @AllArgsConstructor()
 @Builder
-public class GetCommentsOutput {
+public class GetCommentsOutput implements OperationOutput {
     private String id;
     private String firstName;
     private String lastName;

@@ -1,9 +1,9 @@
 package com.tinqinacademy.comment.core;
 
-import com.tinqinacademy.comment.api.model.admin.AdminDeleteInput;
-import com.tinqinacademy.comment.api.model.admin.AdminDeleteOutput;
-import com.tinqinacademy.comment.api.model.admin.AdminEditInput;
-import com.tinqinacademy.comment.api.model.admin.AdminEditOutput;
+import com.tinqinacademy.comment.api.model.admin.delete.AdminDeleteInput;
+import com.tinqinacademy.comment.api.model.admin.delete.AdminDeleteOutput;
+import com.tinqinacademy.comment.api.model.admin.edit.AdminEditInput;
+import com.tinqinacademy.comment.api.model.admin.edit.AdminEditOutput;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +24,7 @@ public class CommentAdminServiceImpl implements CommentAdminService {
     public AdminDeleteOutput delete(AdminDeleteInput input) {
         log.info("Started admin delete {}",input);
         AdminDeleteOutput adminDeleteOutput = AdminDeleteOutput.builder()
+                .message("TEST")
                 //.message("Successfully deleted comment")
                 .build();
         log.info("Finished admin delete {}",input);

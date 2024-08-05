@@ -1,4 +1,4 @@
-package com.tinqinacademy.comment.api.model.exceptions;
+package com.tinqinacademy.comment.api.exceptions;
 
 public class InputException extends RuntimeException {
     public InputException(String message) {

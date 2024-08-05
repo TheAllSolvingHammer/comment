@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+
 import java.util.UUID;
 
 @Getter
@@ -26,4 +27,5 @@ public class UserEntity {
     private String lastName;
     @Column(name="birthday",nullable = false)
     private LocalDate birthDate;
+
 }

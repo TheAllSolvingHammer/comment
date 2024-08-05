@@ -1,7 +1,7 @@
 package com.tinqinacademy.comment.rest.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tinqinacademy.comment.api.model.admin.AdminEditInput;
+import com.tinqinacademy.comment.api.model.admin.edit.AdminEditInput;
 import com.tinqinacademy.comment.rest.enums.Mappings;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

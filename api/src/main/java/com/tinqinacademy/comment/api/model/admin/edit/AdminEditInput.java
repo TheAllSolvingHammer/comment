@@ -1,6 +1,7 @@
-package com.tinqinacademy.comment.api.model.admin;
+package com.tinqinacademy.comment.api.model.admin.edit;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.tinqinacademy.comment.api.base.OperationInput;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -10,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor()
 @AllArgsConstructor()
 @Builder(toBuilder = true)
-public class AdminEditInput {
+public class AdminEditInput implements OperationInput {
     @JsonIgnore
     private String commentID;
     @NotBlank(message = "RoomID an not be blank")
