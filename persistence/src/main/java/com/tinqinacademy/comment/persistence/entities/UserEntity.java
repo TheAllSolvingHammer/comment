@@ -1,5 +1,6 @@
 package com.tinqinacademy.comment.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,5 +30,6 @@ public class UserEntity {
     @Column(name="birthday",nullable = false)
     private LocalDate birthDate;
     @OneToMany(mappedBy = "user")
+    @JsonBackReference
     private List<CommentEntity> commentEntityList;
 }
