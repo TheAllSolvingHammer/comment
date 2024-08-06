@@ -2,17 +2,16 @@ package com.tinqinacademy.comment.rest.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tinqinacademy.comment.api.model.user.get.GetCommentsInput;
+import com.tinqinacademy.comment.api.model.user.get.UserGetCommentsOperation;
 import com.tinqinacademy.comment.api.model.user.leave.LeaveCommentInput;
+import com.tinqinacademy.comment.api.model.user.leave.UserLeaveCommentOperation;
 import com.tinqinacademy.comment.api.model.user.update.UpdateCommentInput;
-import com.tinqinacademy.comment.core.processes.UserGetCommentsOperationImpl;
-import com.tinqinacademy.comment.core.processes.UserLeaveCommentOperationImpl;
-import com.tinqinacademy.comment.core.processes.UserUpdateCommentOperationImpl;
+import com.tinqinacademy.comment.api.model.user.update.UserUpdateOperation;
 import com.tinqinacademy.comment.rest.enums.Mappings;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -22,9 +21,9 @@ import org.springframework.web.bind.annotation.*;
 public class CommentController extends BaseController{
 
     private final ObjectMapper objectMapper;
-    private final UserLeaveCommentOperationImpl userLeaveCommentOperation;
-    private final UserGetCommentsOperationImpl userGetCommentsOperation;
-    private final UserUpdateCommentOperationImpl userUpdateCommentOperation;
+    private final UserLeaveCommentOperation userLeaveCommentOperation;
+    private final UserGetCommentsOperation userGetCommentsOperation;
+    private final UserUpdateOperation userUpdateCommentOperation;
 
 
     @GetMapping(Mappings.GET)

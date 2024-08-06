@@ -1,5 +1,6 @@
 package com.tinqinacademy.comment.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class CommentEntity {
     private UUID id;
     @Column(name="content",nullable = false)
     private String content;
+    @JsonBackReference
     @ManyToOne
     private UserEntity user;
     @Column(name="publish_date",nullable = false)
