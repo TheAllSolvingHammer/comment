@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Validated
-public class CommentAdminController {
+public class CommentAdminController extends BaseController{
     private final CommentAdminService commentAdminService;
     private ObjectMapper objectMapper;
 
