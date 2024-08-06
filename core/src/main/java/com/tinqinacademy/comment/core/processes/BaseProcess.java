@@ -31,12 +31,11 @@ public class BaseProcess {
 
     public Either<ErrorsProcessor, OperationInput> validateInput(OperationInput input) {
         Set<ConstraintViolation<OperationInput>> violations = validator.validate(input);
-        log.info("another test{}",violations);
         if (!violations.isEmpty()) {
             List<String> errorMessages = violations.stream()
                     .map(ConstraintViolation::getMessage)
                     .collect(Collectors.toList());
-            log.info("my test{}",errorMessages);
+
             ErrorsProcessor errorsProcessor = ErrorsProcessor.builder()
                     .httpStatus(HttpStatus.BAD_REQUEST)
                     .statusCode(HttpStatus.BAD_REQUEST.value())

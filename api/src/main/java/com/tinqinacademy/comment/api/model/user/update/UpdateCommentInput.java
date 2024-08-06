@@ -16,4 +16,5 @@ public class UpdateCommentInput implements OperationInput {
     private String commentID;
     @NotBlank(message = "Content can not be blank")
     private String content;
+
 }
