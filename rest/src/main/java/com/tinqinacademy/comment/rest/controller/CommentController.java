@@ -7,7 +7,7 @@ import com.tinqinacademy.comment.api.model.user.leave.LeaveCommentInput;
 import com.tinqinacademy.comment.api.model.user.leave.UserLeaveCommentOperation;
 import com.tinqinacademy.comment.api.model.user.update.UpdateCommentInput;
 import com.tinqinacademy.comment.api.model.user.update.UserUpdateOperation;
-import com.tinqinacademy.comment.rest.enums.Mappings;
+import com.tinqinacademy.comment.api.enums.Mappings;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

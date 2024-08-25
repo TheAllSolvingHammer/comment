@@ -1,4 +1,4 @@
-package com.tinqinacademy.comment.rest.enums;
+package com.tinqinacademy.comment.api.enums;
 
 
 public class Mappings {

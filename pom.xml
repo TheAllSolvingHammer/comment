@@ -18,6 +18,7 @@
         <module>domain</module>
         <module>persistence</module>
         <module>core</module>
+        <module>restexport</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
